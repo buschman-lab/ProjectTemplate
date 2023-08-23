@@ -1,4 +1,4 @@
-List of colors to style plots. Try to make this human and machine readable. For example, if the format is 'NAME: `HEX_COLOR`' it will render nicely in the markdown file and will be readable using regular expressions. For example, in python you could use this code:
+List of colors to style plots. Try to make this human and machine readable. For example, if the format is 'NAME: \`#HEX_COLOR\`' it will render nicely in the markdown file and will be readable using regular expressions. For example, in python you could use this code:
 ```python
 import re
 
