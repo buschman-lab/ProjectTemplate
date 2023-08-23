@@ -82,7 +82,7 @@ Your `project_name` folder should look like this:
 |   └── figures           <- Folder for the figures, as well as the data and scripts needed to generate the figures. All should
 |                            be as compact as possible in order to facilitate sharing with others (e.g., when publishing).
 │
-├── presentations         <- Presentation documents. Includes files (or links) to all presentations related to the project.
+└── presentations         <- Presentation documents. Includes files (or links) to all presentations related to the project.
                              This includes oral presentations (e.g., Powerpoint) as well as posters.
 ```
 
