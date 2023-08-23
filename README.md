@@ -56,10 +56,9 @@ Your `project_name` folder should look like this:
 |   |                            2) a script for downloading the data from another source (e.g., cup)
 │   ├── raw               <- Immutable raw data. This likely includes behavioral data as well as neural data. This should never
 |   |                        be edited directly.
-│   ├── processed         <- Datasets that were processed from `raw` folder. This is usually the data that is will 
-|   |                        be analyzed.
+│   ├── processed         <- Datasets that were processed from `raw` folder. This is usually the data that will be analyzed.
 │   └── interim           <- Small subset datasets that are used for steps along the analysis pipeline or to hold results in
-|                            analyses (e.g., from notebooks)
+|                            analyses (e.g., from notebooks).
 │
 ├── methods               <- Catalog of the methods used to collect the data. This could include data dictionaries, manuals,
 |                            and all other explanatory materials needed to understand how the data was collected. In short, this
