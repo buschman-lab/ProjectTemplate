@@ -49,48 +49,56 @@ Your `project_name` folder should look like this:
 ├── setup.py
 ├── README.md             <- The top-level README for the project. Should describe the project goals and
 |                            provide an overview of the contents.
-├── STYLING.md            <- Maintaining a consistent style across the project is important. This document will include
-|                            details about the color scheme and style of the analysis (e.g, selecting a specific color
-|                             for a brain region).
+├── STYLING.md            <- Maintaining a consistent style across the project is important. This document
+|                            will include details about the color scheme and style of the analysis (e.g, 
+|                            selecting a specific color for a brain region).
 ├── LICENSE
 │
 │
 ├── background            <- Relevant papers and reviews. Summaries of the manuscripts and the findings.
 |
-├── data                  <- All data should be clearly described. There are three different types of data, each stored in a
-|   |                        separate directory, as described below. It is not recommended to keep the data in the repository,
-|   |                        rather the folders should include:
+├── data                  <- All data should be clearly described. There are three different types of 
+|   |                        data, each stored in a separate directory, as described below. It is not 
+|   |                        recommended to keep the data in the repository, rather the folders should
+|   |                        include:
 |   |                            1) a description of where to find the data (including link)
 |   |                            2) a script for downloading the data from another source (e.g., cup)
-│   ├── raw               <- Immutable raw data. This likely includes behavioral data as well as neural data. This should never
-|   |                        be edited directly.
-│   ├── processed         <- Datasets that were processed from `raw` folder. This is usually the data that will be analyzed.
-│   └── interim           <- Small subset datasets that are used for steps along the analysis pipeline or to hold results in
-|                            analyses (e.g., from notebooks).
+│   ├── raw               <- Immutable raw data. This likely includes behavioral data as well as neural
+|   |                        data. This should never be edited.
+│   ├── processed         <- Datasets that were processed from `raw` folder. This is usually the data
+|   |                        that will be analyzed.
+│   └── interim           <- Small subset datasets that are used for steps along the analysis pipeline
+|                            or to hold results in analyses (e.g., from notebooks).
 │
-├── methods               <- Catalog of the methods used to collect the data. This could include data dictionaries, manuals,
-|                            and all other explanatory materials needed to understand how the data was collected. In short, this
-|                            should be the basis for the methods section of the publication and so it will likely include details
-|                            on the behavioral task, the method of data collection, etc.
+├── methods               <- Catalog of the methods used to collect the data. This could include data 
+|                            dictionaries, manuals, and all other explanatory materials needed to 
+|                            understand how the data was collected. In short, this should be the basis 
+|                            for the methods section of the publication and so it will likely include
+|                            details on the behavioral task, the method of data collection, etc.
 │
-├── notebooks             <- Analysis notebooks. Define and maintain a naming convention. It is recommended to include some
-|                            form of version number and author in the filenames. e.g. `1.0-tjb-initial-data-exploration`. The
-|                            naming convention should be clearly described in the `README.md` file.
+├── notebooks             <- Analysis notebooks. Define and maintain a naming convention. It is 
+|                            recommended to include some form of version number and author in the 
+|                            filenames. e.g. `1.0-tjb-initial-data-exploration`. The naming convention
+|                            should be clearly described in the `README.md` file.
 │
-├── source                <- Source code for analyses. These should be organized according to your project needs, but it is
-|   |                        strongly suggested that you include scripts for loading the data from the `raw` folder and for
-|   |                        creating the `processed` data files. Essentially, any time you use a function more than once it
-|   |                        should _not_ be in a notebook but incorporated into a source file.
-│   └── tests               <- Directory that contains tests for all of the source files. 
+├── source                <- Source code for analyses. These should be organized according to your project
+|   |                        needs, but it is strongly suggested that you include scripts for loading the 
+|   |                        data from the `raw` folder and for creating the `processed` data files. 
+|   |                        Essentially, any time you use a function more than once it should _not_ be in
+|   |                        a notebook but incorporated into a source file.
+│   └── tests             <- Directory that contains tests for all of the source files. 
 │
-├── manuscript            <- Manuscript documents. If working locally, then should include all files (including drafts). If working
-|   |                        on the cloud (e.g., Google Docs or Overleaf), then provide a link to the file in README.md and
-|   |                        include the final versions when done.  
-|   └── figures           <- Folder for the figures, as well as the data and scripts needed to generate the figures. All should
-|                            be as compact as possible in order to facilitate sharing with others (e.g., when publishing).
+├── manuscript            <- Manuscript documents. If working locally, then should include all files
+|   |                        (including drafts). If working on the cloud (e.g., Google Docs or Overleaf),
+|   |                        then provide a link to the file in README.md and include the final versions 
+|   |                        when done.  
+|   └── figures           <- Folder for the figures, as well as the data and scripts needed to generate 
+|                            the figures. All should be as compact as possible in order to facilitate
+|                            sharing with others (e.g., when publishing).
 │
-└── presentations         <- Presentation documents. Includes files (or links) to all presentations related to the project.
-                             This includes oral presentations (e.g., Powerpoint) as well as posters.
+└── presentations         <- Presentation documents. Includes files (or links) to all presentations 
+                             related to the project. This includes oral presentations (e.g., Powerpoint)
+                             as well as posters.
 ```
 
 This structure supports a workflow that ensures the project is organized and, thus, easy to navigate. This makes it easy to quickly find figures that you've generated in the past, integrate results across analyses, etc. It will also facilitate writing at the end of the project.
