@@ -49,16 +49,17 @@ Your `project_name` folder should look like this:
 ├── setup.py
 ├── README.md             <- The top-level README for the project. Should describe the project goals and
 |                            provide an overview of the contents.
-├── STYLING.md            <- Maintaining a consistent style across the project is important. This document will include details about
-|                            the color scheme and style of the analysis (e.g, selecting a specific color for a brain region).
+├── STYLING.md            <- Maintaining a consistent style across the project is important. This document will include
+|                            details about the color scheme and style of the analysis (e.g, selecting a specific color
+|                             for a brain region).
 ├── LICENSE
 │
 │
 ├── background            <- Relevant papers and reviews. Summaries of the manuscripts and the findings.
 |
-├── data                  <- All data should be clearly described. There are three different types of data, each stored in a separate
-|   |                        directory, as described below. It is not recommended to keep the data in the repository, rather
-|   |                        the folders should include:
+├── data                  <- All data should be clearly described. There are three different types of data, each stored in a
+|   |                        separate directory, as described below. It is not recommended to keep the data in the repository,
+|   |                        rather the folders should include:
 |   |                            1) a description of where to find the data (including link)
 |   |                            2) a script for downloading the data from another source (e.g., cup)
 │   ├── raw               <- Immutable raw data. This likely includes behavioral data as well as neural data. This should never
