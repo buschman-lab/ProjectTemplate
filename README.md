@@ -112,7 +112,7 @@ All projects are based on prior research. This folder should include all of the 
 Contents of the data folder should not be committed to the github repository (*the data folder can be included to the .gitignore file - this is already done in the template*) . Ideally a script in `scripts` is used to download publicly available data into the `data/raw` folder. In climate science, some datasets (like large global climate model datasets) might not be available publicly or are simply too large to download quickly. In this case we recommend linking the files (using absolute filepaths) into the `data/raw` folders using a script(which itself should reside in `scripts`).
 > No content of `data/raw` should ever be modified manually.
 
-Often the raw data has to be subset, cleaned or preprocessed in some other way. It is recommended that you have a script that, either in `notebooks` or in `source`, that read data from `data/raw` and writes into `data/processed`. This ensures that anyone can reproduce the same results given the identical source data. It is also to a large part self-documenting.
+Often the raw data has to be subset, cleaned or preprocessed in some other way. It is recommended that you have a script, either in `notebooks` or in `source`, that reads data from `data/raw` and writes into `data/processed`. This ensures that anyone can reproduce the same results given the identical source data. It is also to a large part self-documenting.
 
 ### `methods` folder
 This folder should include all of the documentation for the tools and techniques used during data collection. This will serve as a useful documentation for relevant literature. Ideally, this would be organized according to topic (e.g., in subfolders). In addition, it is highly recommended that you include a summary of each manuscript as it relates to the current project. These documents can be updated regularly as the project evolves. This is invaluable for thinking about how the current project relates to the literature and when writing the manuscript.
@@ -125,7 +125,7 @@ To keep tidy and presentable notebooks:
 - _Properly name your notebooks_. Pick a format (e.g. '<running_no><author><short_description>.ipynb') and stick to it.
 - _Keep code in notebooks to a minimum_. Ideally you want to have only short code cells to visualize data and refactor larger functions into the projects source code (see below)
 
-### The `source` folder
+### `source` folder
 A bunch of notebooks/scripts with thousands of line of code is not a great way to design reproducible science. Therefore, we want to store all reusable functions separately. The nice thing about this is that it means they can easily be shared with other people (you could even turn your project into an installable python package if you want!).
 
 Now the only thing you have to do is write some [unit tests](https://docs.pytest.org/en/latest/), to check that your function behaves the way it is expected. These will help to check if changes you make in the future affect the outputs.
