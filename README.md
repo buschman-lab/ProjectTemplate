@@ -7,26 +7,31 @@ This was inspired by a [post from Ryan Abernathy on Medium](https://rabernat.med
 To use the template, simply create a new repository with your `project_name` in GitHub and use this as the starting template. 
 
 ## Tracking ideas and to-dos
-The nice thing about Github is that it has issue tracking built in. This means we can keep track of issues with the code itself (i.e., bugs). But, more importantly, we can keep track of a wish list of _features_ where the features of a scientific project is the analyses. This allows us to use issues to track all of our ideas for analyses, creating sub-issues for tracking progress on the code, and even replying to the issues with the figures that we generate!
+The nice thing about Github is that we can use the built-in issue tracking to keep track of progress. Of course, this could include issues with the code itself (i.e., bugs). But, more importantly, we can keep track of a wish list of _features_ where the features of a scientific project is the analyses. This allows us to use issues to track all of our ideas for analyses, creating sub-issues for tracking progress on the code, and even replying to the issues with the figures that we generate!
 
 ## Version control with git
-One of the nice things about using GitHub to manage the project, is that everything is automatically backed up using version control with git. This should be integrated into your data analysis pipeline, whether using Python or Matlab. Please _update your repository regularly_. I would suggest doing this regularly (at least daily). This not only provides a log of your progress, but will also allow you to roll back to previous versions easily. It also allows you to easily respond to issues, knock off to-do lists, etc. 
+One of the nice things about using GitHub to manage the project, is that everything is automatically backed up with version control. This should be integrated into your analysis pipeline, whether using Python or Matlab. Please _update your repository regularly_. I would suggest doing this at least daily. This not only provides a log of your progress, but will also allow you to roll back to previous versions easily. It also allows you to easily respond to issues, knock off to-do lists, etc. 
 
 Updates can be done automatically (e.g., [here is one solution on Windows](https://gist.github.com/rosharp/c195e67318362ed603148058875327e0)). 
 
+## Sharing with GitHub
+Need to share your results with someone? Simply add them as a collaborator on the project! They'll be able to see all of your analyses and results, read background information on the project, understand the methods you have used, and even add their own voice to the project. This is the beauty of working with GitHub; everything is online and easily shared.
+
+Furthermore, once it is time to publish your manuscript, it is easy to create a publically accessible branch of the repository for reviewers and readers to browse.
+
 ## General Principals
-This is intended to be a helpful scaffold for organizing your thoughts, analyses, results, and writing related to a 
-Some suggestions for how to organize the project:
-I think that generally a set of principles should apply:
-- __Avoid repetions__: That means for example to link a datatset into the `data/raw` folder and read it in several notebooks with something like `xr.open_dataset('../data/raw/dataset.nc')` or to refactor and generalize functions into the source code and import it into notebooks as needed, instead of keeping very similar or copied function definition in each notebook.
-- __Document as you go__: You will rarely do it afterwards, and if that happens it will be a pain! When you develop a function you usually write little snippets of code to test it out. Take the extra time to convert them into unittests. Test are a great way of documenting what functions are supposed to do! The same principal applies to other documentation. If you can structure data the way that it is self-explanatory, that helps more than a long README (but also write the README to get people started please!).
-Use your notebooks to present results without code ([example](https://github.com/jbusecke/guides/blob/master/analysis_sharing_workflow.md)), instead of writing up the same passages in an email with a bunch of loose figures. Your collaborators/advisors/mum will thank you!
+This is intended to be a helpful scaffold for organizing your thoughts, analyses, results, and writing related to a project. Some suggestions for how to organize the project:
 
-If you have suggestions, feel free to raise an issue or submit a pull request.
-
+- __Avoid repetitions__: When things are repeated they often can cause silent errors where one copy of something changes and the others don't. Therefore, any code that is going to be reused should be placed into a `source` code and then called from the notebooks. Similarly, data should be loaded from the data directories within each script (e.g., `xr.open_dataset('../data/raw/dataset.dat')`.
+- __Document as you go__: You will rarely do it afterwards, and if that happens it will be a pain! When developing a function, it is usually good practice to start with a sketch of the function, written as comments. Then, as you code make sure to explain any code that isn't going to be completely obvious. Finally, it is always helpful to add a description at the top along with descriptions of inputs and outputs.
+- __Create unit tests__: When you develop a function, it is important to test it with known inputs/outputs (e.g., using simulated data). It is good coding practice to turn the snippets of code you wrote to test the function into a [unit test](https://en.wikipedia.org/wiki/Unit_testing). Tests are a great way of ensuring functions always return the expected output and documenting what a function is supposed to do.
+- __Use notebooks to organize results__: Once you have results, you will want to organize them and make them easy to peruse in the future. Notebooks are useful for this process. You can create a notebook that presents results with code ([example](https://github.com/jbusecke/guides/blob/master/analysis_sharing_workflow.md)). This keeps everything in one place and avoids the need to write up the same passages in an email with a bunch of loose figures.
+  
+If you have suggestions, feel free to raise an issue or submit a pull request for this template!
 
 ## Organization
 
+To help you organize your project, this template creates a folder structure for each part of the project. 
 Your `project_name` folder should look like this:
 
 ```
@@ -41,12 +46,14 @@ Your `project_name` folder should look like this:
 ├── background            <- Relevant papers and reviews. Summaries of the manuscripts and the findings.
 |
 ├── data
-│   ├── scratch           <- Small subset datasets that are used for results in analyses (e.g., from notebooks)
-│   ├── processed         <- Datasets that were processed from `raw` folder
-│   └── raw               <- Immutable raw data. This likely includes behavioral data as well as neural data. All data
-|                            should be clearly described. Unlikely to include the actual data, instead should it should provide:
-|                                1) a description of where to find the data (including link)
-|                                2) a script for downloading the data from another source (e.g., cup)              
+│   ├── raw               <- Immutable raw data. This likely includes behavioral data as well as neural data. All data
+|   |                        should be clearly described. Unlikely to include the actual data, instead should it should provide:
+|   |                            1) a description of where to find the data (including link)
+|   |                            2) a script for downloading the data from another source (e.g., cup)
+│   ├── processed         <- Datasets that were processed from `raw` folder. This is usually the data that is actively
+|   |                        being analyzed.
+│   └── scratch           <- Small subset datasets that are used for results in analyses (e.g., from notebooks)
+|
 │
 ├── methods               <- Catalog of the methods used to collect the data. This could include data dictionaries, manuals,
 |                            and all other explanatory materials needed to understand how the data was collected. In short, this
@@ -58,24 +65,17 @@ Your `project_name` folder should look like this:
 |                            naming convention should be clearly described in the `README.md` file.
 │
 ├── source                <- Source code for analyses. These should be organized according to your project needs, but it is
-|                            strongly suggested that you include scripts for loading the data from the `raw` folder and for
-|                            creating the `processed` data files. Essentially, any time you use a function more than once it
-|                            should _not_ be in a notebook but incorporated into a source file.
+|   |                          strongly suggested that you include scripts for loading the data from the `raw` folder and for
+|   |                           creating the `processed` data files. Essentially, any time you use a function more than once it
+|   |                          should _not_ be in a notebook but incorporated into a source file.
+│   └── tests               <- Directory that contains tests for all of the source files. 
+
 │
 ├── manuscript            <- Manuscript documents. If working with local fiels, then should include all drafts. If working
-|   |                        on the cloud (e.g., Google Docs or Overleaf), then provide a link to the file in README.md and
-|   |                        include the final versions when done.  
-│   ├── figures           <- Folder for the figures, as well as the data and scripts needed to generate the figures. All should
-|                            be as compact as possible in order to facilitate sharing with others (e.g., when publishing).
-├── ci                    <- Files for continous integration; see travis-ci.com
-│
-└──  project_name         <- Source code for use in this project.
-    ├── __init__.py       <- Makes `project_name` a Python module
-    │
-    ├── dummy.py          <- Example python module file. These contain your installable functions
-    |
-    └── tests
-        └── test_dummy.py <- Test modules corresponding to your module files.
+    |                        on the cloud (e.g., Google Docs or Overleaf), then provide a link to the file in README.md and
+    |                        include the final versions when done.  
+    └── figures           <- Folder for the figures, as well as the data and scripts needed to generate the figures. All should
+                             be as compact as possible in order to facilitate sharing with others (e.g., when publishing).
 ```
 
 The suggested workflow revolves around a preset folder structure. Combined with a set of rules this eliminates the effort to make decisions about directory structure and organization, freeing up mental energy and making the repository mor intuitive to understand.
@@ -99,10 +99,9 @@ This folder should include all of the documentation for the tools and techniques
 ### `notebook` folder
 Notebooks are a great tool for organizing code and plots, whether they are [jupyter notebooks](https://jupyter.org/) for Python or [Live Scripts](https://de.mathworks.com/help/matlab/matlab_prog/what-is-a-live-script-or-function.html) for Matlab. This folder should be where you keep all of your notebooks for analysis and plotting. If you don't use notebooks then just delete the folder!
 
-One caveat is that notebooks can become unweidly 
-are a phenomenal tool. They combine code, notes, math, pictures etc in a single container. They tend to get messy quickly over time.
+One caveat is that notebooks can become unweidly. They combine code, notes, math, pictures etc in a single container. They tend to get messy quickly over time.
 To keep tidy and presentable notebooks:
-- Properly name your notebooks. Pick a format (e.g. '<running_no><author><short_description>.ipynb') and stick to it.
+- _Properly name your notebooks_. Pick a format (e.g. '<running_no><author><short_description>.ipynb') and stick to it.
 - Keep code in notebooks to a minimum. Ideally you want to have only short code cells to visualize data and refactor larger functions into the projects source code (see below)
 
 ### The `source` folder
