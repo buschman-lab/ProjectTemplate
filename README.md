@@ -8,7 +8,7 @@ Second, we can use the 'Issues' tracker to keep track of progress and ideas. Whe
 This template was heavily influence by a [post from Ryan Abernathy on Medium](https://rabernat.medium.com/scientific-collaboration-and-project-management-in-github-d74f2255ae5f) and the therein referenced [GitHub template](https://github.com/jbusecke/cookiecutter-science-project).
 
 ### Using the template
-To use the template, simply create a new repository with your `project_name` in GitHub and use this as the starting template. The repository can either be part of the buschmanlab GitHub account or on your personal GitHub account. Either way, _it is suggested that you keep the project repository marked as private_.
+To use the template, you can either 1) click the 'Use this template' link above or 2) create a new repository with your `project_name` in GitHub and use this as the starting template. The repository can either be part of the buschmanlab GitHub account or on your personal GitHub account. Either way, _it is suggested that you keep the resuting project repository marked as private_ and then share it with any collaborators.
 
 ### Tracking ideas and to-dos
 The nice thing about Github is that we can use the built-in issue tracking to keep track of progress. Of course, this could include issues with the code itself (i.e., bugs). But, more importantly, we can keep track of a wish list of _features_ where the features of a scientific project is the analyses. This allows us to use issues to track all of our ideas for analyses, creating sub-issues for tracking progress on the code, and even replying to the issues with the figures that we generate!
