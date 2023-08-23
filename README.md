@@ -18,10 +18,17 @@ One of the nice things about using GitHub to manage the project, is that everyth
 
 Updates can be done automatically (e.g., [here is one solution on Windows](https://gist.github.com/rosharp/c195e67318362ed603148058875327e0)). 
 
-### Sharing with GitHub
+### Sharing with others
 Need to share your results with someone? Simply add them as a collaborator on the project! They'll be able to see all of your analyses and results, read background information on the project, understand the methods you have used, and even add their own voice to the project. This is the beauty of working with GitHub; everything is online and easily shared.
 
 Furthermore, once it is time to publish your manuscript, it is easy to create a publically accessible branch of the repository for reviewers and readers to browse.
+
+### Integrating with Slack
+GitHub is [integrated with Slack](https://github.com/integrations/slack). By inviting `@github` into your project channel, you can directly link to code in your message and GitHub will preview the link with the code.
+
+You can subscribe to repositories to get notifications in Slack: `/github subscribe owner/repo`. You can also opt into/out of different types of notifications, for example using `/github subscribe owner/repo issues` to get notified when a new issue is created and `/github subscribe owner/repo commits comments` to track commits and comments. See above link for more examples.
+
+You can create and edit issues right in Slack: `/github open owner/repo`. Alternatively, you can click on the three dots (...) of any message and turn it into an issue on GitHub! This allows for conversations about projects to be quickly and easily logged for future analysis.
 
 ## General Principals
 This is intended to be a helpful scaffold for organizing your thoughts, analyses, results, and writing related to a project. Some suggestions for how to organize the project:
