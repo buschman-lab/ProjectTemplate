@@ -56,11 +56,9 @@ Your `project_name` folder should look like this:
 |   |                            2) a script for downloading the data from another source (e.g., cup)
 │   ├── raw               <- Immutable raw data. This likely includes behavioral data as well as neural data. This should never
 |   |                        be edited directly.
-│   ├── processed         <- Datasets that were processed from `raw` folder. This is usually the data that is actively
-|   |                        being analyzed.
-│   └── scratch           <- Small subset datasets that are used for results in analyses (e.g., from notebooks)
+│   ├── processed         <- Datasets that were processed from `raw` folder. This is usually the data that forms the basis for analysis.
+│   └── scratch           <- Small subset datasets that are used for intermediate steps or results in analyses (e.g., from notebooks)
 |
-│
 ├── methods               <- Catalog of the methods used to collect the data. This could include data dictionaries, manuals,
 |                            and all other explanatory materials needed to understand how the data was collected. In short, this
 |                            should be the basis for the methods section of the publication and so it will likely include details
@@ -82,7 +80,7 @@ Your `project_name` folder should look like this:
 |   └── figures           <- Folder for the figures, as well as the data and scripts needed to generate the figures. All should
 |                            be as compact as possible in order to facilitate sharing with others (e.g., when publishing).
 │
-├── presentations         <- Presentation documents. Includes files (or links) to all presentations related to the project.
+└── presentations         <- Presentation documents. Includes files (or links) to all presentations related to the project.
                              This includes oral presentations (e.g., Powerpoint) as well as posters.
 ```
 
@@ -97,9 +95,7 @@ All projects are based on prior research. This folder should include all of the 
 Contents of the data folder should not be committed to the github repository (*the data folder can be included to the .gitignore file - this is already done in the template*) . Ideally a script in `scripts` is used to download publicly available data into the `data/raw` folder. In climate science, some datasets (like large global climate model datasets) might not be available publicly or are simply too large to download quickly. In this case we recommend linking the files (using absolute filepaths) into the `data/raw` folders using a script(which itself should reside in `scripts`).
 > No content of `data/raw` should ever be modified manually.
 
-Often the raw data has to be subset, cleaned or preprocessed in some other way. I recommend to maintain a [jupyter notebook]() in `notebooks` which reads data from `data/raw` and writes into `data/processed`.
-
-This method ensures that anyone can reproduce the same results given the identical source data. It is also to a large part self-documenting.
+Often the raw data has to be subset, cleaned or preprocessed in some other way. It is recommended that you have a script that, either in `notebooks` or in `source`, that read data from `data/raw` and writes into `data/processed`. This ensures that anyone can reproduce the same results given the identical source data. It is also to a large part self-documenting.
 
 ### `methods` folder
 This folder should include all of the documentation for the tools and techniques used during data collection. This will serve as a useful documentation for relevant literature. Ideally, this would be organized according to topic (e.g., in subfolders). In addition, it is highly recommended that you include a summary of each manuscript as it relates to the current project. These documents can be updated regularly as the project evolves. This is invaluable for thinking about how the current project relates to the literature and when writing the manuscript.
@@ -123,7 +119,7 @@ Each repository should (hopefully) lead to a single publication. Other projects 
 If you are writing a multi-project manuscript (e.g., a PhD thesis, then you can simply refer to the original repositories).
 
 ## Project Styling
-It is very helpful to have a consistent style that is maintained throughout the project. This helps others quickly understand what you are plotting. It is suggested that you list the appropriate styles in a separate `STYLING.md` file. If organized well, this could be both machine and human readable, allowing you to automatically import styles for your figures and ensure any changes automatically propagate to each figure. An example `STYLING.md` file is included in the template.
+It is very helpful to have a consistent style that is maintained throughout the project. This helps others quickly understand what you are plotting. It is suggested that you list the appropriate styles in a separate `STYLING.md` file. If organized well, this could be both machine and human readable, allowing you to automatically import styles for your figures and ensure any changes automatically propagate to each figure. An example [`STYLING.md`](STYLING.md) file is included in the template.
 
 Colors should be chosen to be complementary to one another. There are many online resources for choosing a color scheme:
 - [Coolors](https://coolors.co/)
